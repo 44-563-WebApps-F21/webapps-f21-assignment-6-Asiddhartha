@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Assignment</title>
+</head>
+
+<body>
+
+    <h2>Pass phrase by Siddhartha reddy addunoor</h2>
+    <form>
+        <label for="secret_phrase">Enter the secret phrase</label>
+        <input type="password" id="phrase" value="let me in">
+        <br>
+        <br>
+        <label for="phrase_name">Enter a phrase</label>
+        <input type="text" id="phrase_text">
+        <br>
+        <br>
+    </form>
+
+    <button class="btn btn-success" onclick="processPhrase()">Check the Phrase</button>
+    <p id="result"></p>
+
+
+    <script>
+        var correct = 0;
+        var wrong = 0;
+
+
+
+        function processPhrase() {
+            a = document.getElementById("phrase").value
+            b = document.getElementById("phrase_text").value
+            c = document.getElementById("result")
+            if (a == b) {
+                correct += 1;
+                alert("Access allowed");
+                c.innerHTML = "RIGHT - " + correct;
+            }
+            else {
+                wrong += 1;
+                alert("Access denied");
+                c.innerHTML = "WRONG - " + wrong;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
