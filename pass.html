@@ -8,6 +8,19 @@
 <body>
 
     <h2>Pass phrase by Siddhartha reddy addunoor</h2>
+    <style>
+        h2 {
+            background-color: rgb(88, 79, 206);
+        }
+    
+        label {
+            color: rgb(70, 66, 138);
+        }
+    
+        p {
+            color: rgb(45, 226, 69);
+        }
+    </style>
     <form>
         <label for="secret_phrase">Enter the secret phrase</label>
         <input type="password" id="phrase" value="let me in">
@@ -27,6 +40,8 @@
         var correct = 0;
         var wrong = 0;
         var usingImage = 1;
+        var countP = 0;
+        var countN = 0;
 
 
 
@@ -43,8 +58,16 @@
                 wrong += 1;
                 alert("Access denied");
                 c.innerHTML = "WRONG - " + wrong;
+                if (countN >= 3) {
+                    if (wrong >= 3) {
+                        incorrectPassPhrase();
+                    }
+                }
 
             }
+        }
+        function incorrectPassPhrase() {
+            alert("Account Locked");
         }
         function newImage() {
             switch (usingImage) {
