@@ -12,11 +12,11 @@
         h2 {
             background-color: rgb(88, 79, 206);
         }
-    
+
         label {
             color: rgb(70, 66, 138);
         }
-    
+
         p {
             color: rgb(145, 100, 86);
         }
@@ -43,19 +43,19 @@
         var countP = 0;
         var countN = 0;
 
-
-
         function processPhrase() {
             a = document.getElementById("phrase").value
             b = document.getElementById("phrase_text").value
             c = document.getElementById("result")
             if (a == b) {
                 correct += 1;
+                countN = 0;
                 alert("Access allowed");
                 c.innerHTML = "RIGHT - " + correct;
             }
             else {
                 wrong += 1;
+                countN++;
                 alert("Access denied");
                 c.innerHTML = "WRONG - " + wrong;
                 if (countN >= 3) {
@@ -69,6 +69,7 @@
         function incorrectPassPhrase() {
             alert("Account Locked");
         }
+        
         function newImage() {
             switch (usingImage) {
                 case 1:
